@@ -1,4 +1,5 @@
 PoC for Burn In tests for Nova using Tempest
 ============================================
 
-Temporary readme
+To run the burn-in tests, from the Tempest root directory run the following command:
+ostestr --regex burn-in :: 
