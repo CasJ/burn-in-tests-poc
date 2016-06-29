@@ -5,6 +5,7 @@ __pycache__/
 # Eclipse project files
 .project
 .pydevproject
+.settings/
 
 # Distribution / packaging
 .Python
@@ -44,4 +45,5 @@ htmlcov/
 nosetests.xml
 coverage.xml
 *,cover
+*.log
 
