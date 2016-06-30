@@ -9,7 +9,6 @@ from tempest import test
 
 class DeleteServerBurnIn(base.BaseV2ComputeTest):
 
-
     @classmethod
     def resource_setup(cls):
         super(DeleteServerBurnIn, cls).resource_setup()

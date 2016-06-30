@@ -9,7 +9,7 @@ import subprocess
 import time
 
 from tempest import config
-from tempest.lib.exceptions import TimeoutException 
+from tempest.lib.exceptions import TimeoutException
 
 CONF = config.CONF
 
@@ -24,12 +24,12 @@ def ping_host(host, count=CONF.validation.ping_count,
     @type count: int
     @param size: The packet size for ping packets
     @type size: int
-    @param nic: 
+    @param nic:
     @type nic: string
     @return: True if the server was reachable, False otherwise
     @rtype: bool
     """
-    
+
     # Regex that looks for a text with the following format:
     # 33.333% packet loss
     # and keeps the int value before the % symbol as group 1
@@ -53,6 +53,7 @@ def ping_host(host, count=CONF.validation.ping_count,
     # If at least one packet made it through, return True
     return packet_loss_percent != '100'
 
+
 def ping_until_reachable(ip, timeout=CONF.validation.ping_timeout):
     """
     @summary: Ping an IP address until it responds or a timeout
@@ -67,6 +68,6 @@ def ping_until_reachable(ip, timeout=CONF.validation.ping_timeout):
 
     while time.time() < end_time:
         if ping_host(ip):
-            return
+            return True
 
     raise TimeoutException()
